@@ -1,6 +1,10 @@
 /*
   ============================================================
-  PlantPal - Smart Plant Monitoring Pot
+  PlantPal — Smart Plant Monitor
+  Part of the Kypruino STEM Projects by ROBO (robo.com.cy)
+  Guide: https://robo.com.cy/blogs/blog/smart-plant-monitor-kypruino-oled
+  ============================================================
+
   Board: Kypruino / Arduino-compatible
   Display: 0.96" SSD1306 128x64 I2C OLED
 

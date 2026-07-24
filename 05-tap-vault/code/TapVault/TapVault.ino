@@ -1,8 +1,12 @@
 /*
   ============================================================
-  Kypruino Mini ATM / NFC Bank Machine
-  Student-Friendly Version
+  TapVault — Kypruino Mini NFC Banking Terminal
+  Part of the Kypruino STEM Projects by ROBO (robo.com.cy)
+  Guide: https://robo.com.cy/blogs/blog/kypruino-mini-nfc-banking-terminal
   ============================================================
+
+  Educational simulation only. No connection to real banks or
+  payment networks. Do not use real bank cards.
 
   What this project does:
   - The user taps an RFID/NFC card.

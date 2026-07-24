@@ -1,7 +1,8 @@
 /*
   ============================================================
-  Kypruino Ultrasonic Note Theremin
-  Simplified Student Version
+  SonicSphere — Kypruino Mini Theremin
+  Part of the Kypruino STEM Projects by ROBO (robo.com.cy)
+  Guide: https://robo.com.cy/blogs/blog/kypruino-mini-theremin-ultrasonic-musical-instrument
   ============================================================
 
   What this project does:

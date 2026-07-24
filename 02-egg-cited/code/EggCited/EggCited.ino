@@ -1,5 +1,24 @@
 /*
-  Easter Egg
+  ============================================================
+  EggCited — Interactive 3D Printed Easter Egg
+  Part of the Kypruino STEM Projects by ROBO (robo.com.cy)
+  Guide: https://robo.com.cy/blogs/blog/interactive-3d-printed-easter-egg-kypruino-arduino
+  ============================================================
+
+  What this project does:
+  - A PIR sensor detects when the egg is found.
+  - The onboard NeoPixels flash, then play a smooth pastel
+    colour animation.
+  - The buzzer plays a short reward sound.
+  - The egg then resets and waits to be found again.
+
+  Wiring:
+    PIR sensor:  VCC -> 5V, GND -> GND, OUT -> D7
+    Built-in Kypruino: NeoPixels -> D8, Buzzer -> D9
+
+  Libraries:
+    Adafruit NeoPixel
+  ============================================================
 */
 
 #include <Adafruit_NeoPixel.h>

@@ -1,6 +1,6 @@
 # Kypruino STEM Projects
 
-Open build files for the STEM projects published on the [ROBO CY blog](https://robo.com.cy/blogs/blog). Every project folder contains the Arduino sketch, the 3D-printable parts, wiring notes and a link to the full write-up.
+Open build files for the STEM projects published on the [ROBO CY blog](https://robo.com.cy/blogs/blog/tagged/kypruino_stem_project). Every project folder contains the Arduino sketch, the 3D-printable parts, wiring notes and a link to the full write-up.
 
 All projects run on the **[Kypruino UNO+](https://robo.com.cy/products/kypruino-uno-v0-6)** (ATmega328P, Arduino UNO compatible) with onboard NeoPixels, buzzer, buttons and a dedicated I2C/OLED port. A plain Arduino UNO works too, with extra manual wiring for the onboard parts.
 
@@ -199,4 +199,4 @@ No warranty. Provided "as is". You are responsible for the safety of anything yo
 
 Built by [ROBO](https://robo.com.cy) — Robo Educational & Research Robotics Ltd, Cyprus. Makers of the Kypruino UNO+, Cyprus's first Arduino-compatible board, deployed in over 100 schools.
 
-[Blog](https://robo.com.cy/blogs/blog) · [Shop](https://robo.com.cy/collections) · [Apps](https://robo.com.cy/pages/apps) · [Educators](https://robo.com.cy/pages/educators) · [YouTube](https://www.youtube.com/@robo4601) · [Instagram](https://www.instagram.com/robo.com.cy/)
+[Blog](https://robo.com.cy/blogs/blog/tagged/kypruino_stem_project) · [Shop](https://robo.com.cy/collections) · [Apps](https://robo.com.cy/pages/apps) · [Educators](https://robo.com.cy/pages/educators) · [YouTube](https://www.youtube.com/@robo4601) · [Instagram](https://www.instagram.com/robo.com.cy/)

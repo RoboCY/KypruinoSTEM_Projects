@@ -1,10 +1,13 @@
 /*
   ============================================================
-  Kypruino Smart Mini Greenhouse
-  Humidity-Based Watering Version
+  MiniGreenhouse — Kypruino Smart Mini Greenhouse
+  Part of the Kypruino STEM Projects by ROBO (robo.com.cy)
+  Guide: https://robo.com.cy/blogs/blog/kypruino-mini-smart-greenhouse
   ============================================================
 
-  Features:
+  Humidity-based watering version.
+
+  What this project does:
   - Reads temperature and humidity every few minutes.
   - If air humidity is too low, the pump runs briefly to fill the water channel.
   - If temperature or humidity is too high, the fan turns on for ventilation.

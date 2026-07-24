@@ -1,10 +1,24 @@
 /*
-  Halloween Pumpkin
-  Description:
-  Hardware: Lightup using PIR sensor and on-board NeoPixels and Buzzer
-  Library: Adafruit NeoPixel library
-  Author: ROBO
-  Date: October 2025 
+  ============================================================
+  PumpkinPeek — Interactive 3D Printed Spooky Pumpkin
+  Part of the Kypruino STEM Projects by ROBO (robo.com.cy)
+  Guide: https://robo.com.cy/blogs/blog/create-your-own-kypruino-arduino-spooky-3d-printed-pumpkin
+  ============================================================
+
+  What this project does:
+  - A PIR sensor detects someone passing by.
+  - The onboard NeoPixels flicker orange/red like a candle
+    (random brightness 75-255).
+  - The buzzer plays the opening of the Halloween theme.
+  - The pumpkin then cools down and re-arms for the next visitor.
+
+  Wiring:
+    PIR sensor:  VCC -> 5V, GND -> GND, OUT -> D7
+    Built-in Kypruino: NeoPixels -> D8, Buzzer -> D9
+
+  Libraries:
+    Adafruit NeoPixel
+  ============================================================
 */
 
 #include <Adafruit_NeoPixel.h>

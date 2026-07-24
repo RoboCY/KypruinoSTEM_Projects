@@ -1,7 +1,11 @@
 /*
  * ============================================================
- *  MAGICAL LAMP — a gesture-controlled mood lamp
- *  Hardware: Arduino Uno + MPU6050 (motion sensor) + NeoPixel ring (pin D8)
+ *  TiltGlow — MagicMotion DIY Mood Lamp
+ *  Part of the Kypruino STEM Projects by ROBO (robo.com.cy)
+ *  Guide: https://robo.com.cy/blogs/blog/magicmotion-diy-mood-lamp-kypruino-neopixel
+ *
+ *  Hardware: Kypruino (Arduino UNO compatible) + MPU6050 motion
+ *  sensor + NeoPixel ring (pin D8)
  * ============================================================
  *
  *  WHAT THIS PROJECT DOES
