@@ -19,4 +19,4 @@ More photos in [images/](images/).
 | **Wiring** | PIR VCC → 5V · GND → GND · OUT → D7 |
 | **Libraries** | Adafruit NeoPixel |
 | **Print** | Translucent filament, hollow two-part shell, USB opening, stable base |
-| **Guide** | [Read the full build](https://robo.com.cy/blogs/blog/create-your-own-interactive-easter-egg-with-kypruino-arduino) |
+| **Guide** | [Read the full build](https://robo.com.cy/blogs/blog/interactive-3d-printed-easter-egg-kypruino-arduino) |

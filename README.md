@@ -59,7 +59,7 @@ Each project folder follows the same pattern: `README.md`, `code/`, `stl/`, `ima
 | **Wiring** | PIR VCC → 5V · GND → GND · OUT → D7 |
 | **Libraries** | Adafruit NeoPixel |
 | **Print** | Translucent filament, hollow two-part shell, USB opening, stable base |
-| **Guide** | [Read the build](https://robo.com.cy/blogs/blog/create-your-own-interactive-easter-egg-with-kypruino-arduino) |
+| **Guide** | [Read the build](https://robo.com.cy/blogs/blog/interactive-3d-printed-easter-egg-kypruino-arduino) |
 
 ---
 
@@ -86,7 +86,7 @@ Each project folder follows the same pattern: `README.md`, `code/`, `stl/`, `ima
 | **Libraries** | Adafruit NeoPixel |
 | **Print** | House enclosure (roof slot for LDR), street lamp, base section with underground wire channel |
 | **Tuning** | Adjust `int darkThreshold = 500;` and the comparison direction to suit your LDR module |
-| **Guide** | [Read the build](https://robo.com.cy/blogs/blog/how-to-build-a-smart-street-light-model-for-dark-skies) |
+| **Guide** | [Read the build](https://robo.com.cy/blogs/blog/smart-street-light-model-dark-skies-kypruino) |
 
 ---
 
@@ -145,7 +145,7 @@ Each project folder follows the same pattern: `README.md`, `code/`, `stl/`, `ima
 | **Libraries** | DHT sensor library |
 | **Config** | `DHT_TYPE`, `HUMIDITY_WATER_THRESHOLD`, `TEMP_FAN_ON/OFF`, `HUMIDITY_FAN_ON/OFF`, `CHECK_INTERVAL_MS`, `PUMP_TIME_MS` |
 | **Print** | Greenhouse enclosure with internal water channel |
-| **Guide** | *Blog write-up coming soon* |
+| **Guide** | [Read the build](https://robo.com.cy/blogs/blog/kypruino-mini-smart-greenhouse) |
 
 ---
 

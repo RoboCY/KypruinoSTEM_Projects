@@ -20,4 +20,4 @@ More photos in [images/](images/).
 | **Libraries** | Adafruit NeoPixel |
 | **Print** | House enclosure (roof slot for LDR), street lamp, base section with underground wire channel |
 | **Tuning** | Adjust `int darkThreshold = 500;` and the comparison direction to suit your LDR module |
-| **Guide** | [Read the full build](https://robo.com.cy/blogs/blog/how-to-build-a-smart-street-light-model-for-dark-skies) |
+| **Guide** | [Read the full build](https://robo.com.cy/blogs/blog/smart-street-light-model-dark-skies-kypruino) |

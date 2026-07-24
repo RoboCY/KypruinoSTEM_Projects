@@ -20,4 +20,4 @@ More photos in [images/](images/).
 | **Libraries** | DHT sensor library |
 | **Config** | `DHT_TYPE`, `HUMIDITY_WATER_THRESHOLD = 55.0`, `TEMP_FAN_ON/OFF`, `HUMIDITY_FAN_ON/OFF`, `CHECK_INTERVAL_MS`, `PUMP_TIME_MS` |
 | **Print** | Greenhouse enclosure with internal water channel |
-| **Guide** | *Blog write-up coming soon* |
+| **Guide** | [Read the full build](https://robo.com.cy/blogs/blog/kypruino-mini-smart-greenhouse) |
