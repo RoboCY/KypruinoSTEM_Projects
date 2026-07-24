@@ -2,7 +2,7 @@
 
 Open build files for the STEM projects published on the [ROBO CY blog](https://robo.com.cy/blogs/blog/tagged/kypruino_stem_project). Every project folder contains the Arduino sketch, the 3D-printable parts, wiring notes and a link to the full write-up.
 
-All projects run on the **[Kypruino UNO+](https://robo.com.cy/products/kypruino-uno-v0-6)** (ATmega328P, Arduino UNO compatible) with onboard NeoPixels, buzzer, buttons and a dedicated I2C/OLED port. A plain Arduino UNO works too, with extra manual wiring for the onboard parts.
+All projects run on the **[Kypruino UNO+](https://robo.com.cy/products/kypruino-uno-v0-8)** (ATmega328P, Arduino UNO compatible) with onboard NeoPixels, buzzer, buttons and a dedicated I2C/OLED port. A plain Arduino UNO works too, with extra manual wiring for the onboard parts.
 
 > **Free for hobbyists and makers. Attribution required. Commercial use is not permitted without a licence.** See [Licence](#licence).
 
