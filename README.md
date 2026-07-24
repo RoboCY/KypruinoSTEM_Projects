@@ -12,17 +12,18 @@ All projects run on the **[Kypruino UNO+](https://robo.com.cy/products/kypruino-
 
 ```
 kypruino-stem-projects/
-├── 01-spooky-pumpkin/
+├── 01-pumpkin-peek/
 │   ├── README.md
 │   ├── code/          Arduino sketch (.ino)
 │   ├── stl/           3D printable parts (.stl / .3mf)
 │   └── images/
-├── 02-easter-egg/
-├── 03-magicmotion-mood-lamp/
-├── 04-smart-street-light/
-├── 05-mini-nfc-banking-terminal/
-├── 06-mini-theremin/
-├── 07-smart-plant-monitor/
+├── 02-egg-cited/
+├── 03-tilt-glow/
+├── 04-star-saver/
+├── 05-tap-vault/
+├── 06-sonic-sphere/
+├── 07-plant-pal/
+├── 08-mini-greenhouse/
 ├── LICENSE-CODE
 ├── LICENSE-HARDWARE
 └── README.md
@@ -34,8 +35,8 @@ Each project folder follows the same pattern: `README.md`, `code/`, `stl/`, `ima
 
 ## Projects
 
-### `01-spooky-pumpkin/`
-**Interactive 3D Printed Spooky Pumpkin** — A motion-activated Halloween prop. A PIR sensor detects passers-by, the onboard NeoPixels flicker orange/red like a candle (random brightness 75–255) and the buzzer plays the opening of the Halloween theme, then cools down and re-arms. Printed in transparent PLA/PETG so the shell glows.
+### `01-pumpkin-peek/`
+**PumpkinPeek — Interactive 3D Printed Spooky Pumpkin** — A motion-activated Halloween prop. A PIR sensor detects passers-by, the onboard NeoPixels flicker orange/red like a candle (random brightness 75–255) and the buzzer plays the opening of the Halloween theme, then cools down and re-arms. Printed in transparent PLA/PETG so the shell glows.
 
 | | |
 |---|---|
@@ -49,8 +50,8 @@ Each project folder follows the same pattern: `README.md`, `code/`, `stl/`, `ima
 
 ---
 
-### `02-easter-egg/`
-**Interactive 3D Printed Easter Egg** — An egg that celebrates when it is found. PIR motion detection triggers a quick LED flash, a smooth pastel colour animation and a short reward sound, then resets. Two-part translucent print for easy access to the electronics.
+### `02-egg-cited/`
+**EggCited — Interactive 3D Printed Easter Egg** — An egg that celebrates when it is found. PIR motion detection triggers a quick LED flash, a smooth pastel colour animation and a short reward sound, then resets. Two-part translucent print for easy access to the electronics.
 
 | | |
 |---|---|
@@ -62,8 +63,8 @@ Each project folder follows the same pattern: `README.md`, `code/`, `stl/`, `ima
 
 ---
 
-### `03-magicmotion-mood-lamp/`
-**MagicMotion DIY Mood Lamp** — A gesture-controlled lamp with no buttons or app. Tilt to change brightness, shake to cycle colour, flip upside down to switch off. Colours cross-fade smoothly and each has its own idle animation. Startup calibration records a reference gravity vector.
+### `03-tilt-glow/`
+**TiltGlow — MagicMotion DIY Mood Lamp** — A gesture-controlled lamp with no buttons or app. Tilt to change brightness, shake to cycle colour, flip upside down to switch off. Colours cross-fade smoothly and each has its own idle animation. Startup calibration records a reference gravity vector.
 
 | | |
 |---|---|
@@ -75,8 +76,8 @@ Each project folder follows the same pattern: `README.md`, `code/`, `stl/`, `ima
 
 ---
 
-### `04-smart-street-light/`
-**Smart Street Light Model for Dark Skies** — A planetarium demonstration model for light-pollution awareness. An LDR module reads ambient light; below a threshold the model switches on a downward-facing warm white street lamp while the onboard NeoPixels light the house interior in a cooler white. Lamp wiring is routed underground into the house for a clean presentation.
+### `04-star-saver/`
+**StarSaver — Smart Street Light Model for Dark Skies** — A planetarium demonstration model for light-pollution awareness. An LDR module reads ambient light; below a threshold the model switches on a downward-facing warm white street lamp while the onboard NeoPixels light the house interior in a cooler white. Lamp wiring is routed underground into the house for a clean presentation.
 
 | | |
 |---|---|
@@ -89,8 +90,8 @@ Each project folder follows the same pattern: `README.md`, `code/`, `stl/`, `ima
 
 ---
 
-### `05-mini-nfc-banking-terminal/`
-**Kypruino Mini Banking System** — A simulated card-based banking terminal. Tap an RFID card to open an account, then deposit, withdraw or transfer virtual money to a second card. Balances are stored in EEPROM as cents so they survive power loss. Onboard buttons drive the menu and digit editor; NeoPixels and buzzer give accept/decline feedback.
+### `05-tap-vault/`
+**TapVault — Kypruino Mini Banking System** — A simulated card-based banking terminal. Tap an RFID card to open an account, then deposit, withdraw or transfer virtual money to a second card. Balances are stored in EEPROM as cents so they survive power loss. Onboard buttons drive the menu and digit editor; NeoPixels and buzzer give accept/decline feedback.
 
 | | |
 |---|---|
@@ -106,8 +107,8 @@ Each project folder follows the same pattern: `README.md`, `code/`, `stl/`, `ima
 
 ---
 
-### `06-mini-theremin/`
-**Kypruino Mini Theremin** — A gesture-played instrument in a spherical shell. Hand distance from an ultrasonic sensor maps to chromatic notes from C4 to C6, with stability filtering so notes do not jump. A potentiometer sets vibrato depth. Sound comes from the onboard buzzer via `tone()`.
+### `06-sonic-sphere/`
+**SonicSphere — Kypruino Mini Theremin** — A gesture-played instrument in a spherical shell. Hand distance from an ultrasonic sensor maps to chromatic notes from C4 to C6, with stability filtering so notes do not jump. A potentiometer sets vibrato depth. Sound comes from the onboard buzzer via `tone()`.
 
 | | |
 |---|---|
@@ -120,8 +121,8 @@ Each project folder follows the same pattern: `README.md`, `code/`, `stl/`, `ima
 
 ---
 
-### `07-smart-plant-monitor/`
-**Smart Plant Monitor** — A plant pot that tells you how the plant feels. Reads soil moisture, ambient light, temperature and humidity, derives VPD (vapour pressure deficit) and a weighted comfort score, then cycles three OLED screens: an animated mood face, live sensor values and a suggested action. Ambient light is judged on a rolling 24-hour average so it does not complain every night.
+### `07-plant-pal/`
+**PlantPal — Smart Plant Monitor** — A plant pot that tells you how the plant feels. Reads soil moisture, ambient light, temperature and humidity, derives VPD (vapour pressure deficit) and a weighted comfort score, then cycles three OLED screens: an animated mood face, live sensor values and a suggested action. Ambient light is judged on a rolling 24-hour average so it does not complain every night.
 
 | | |
 |---|---|
@@ -131,6 +132,20 @@ Each project folder follows the same pattern: `README.md`, `code/`, `stl/`, `ima
 | **Config** | Uncomment one care profile: `PROFILE_DRY_LOVING`, `PROFILE_BRIGHT_HERB`, `PROFILE_BALANCED_HOUSEPLANT`, `PROFILE_FLOWERING`, `PROFILE_HUMID_LOVING`, `PROFILE_ORCHID_AIRY`, `PROFILE_CUSTOM` |
 | **Print** | Pot with a flat side for external board/OLED mounting, plus slots for the light and AHT10 sensors |
 | **Guide** | [Read the build](https://robo.com.cy/blogs/blog/smart-plant-monitor-kypruino-oled) |
+
+---
+
+### `08-mini-greenhouse/`
+**Smart Mini Greenhouse** — A desktop greenhouse that waters and ventilates itself. A DHT22 sensor checks temperature and air humidity every five minutes: if humidity drops too low, a small pump briefly fills the internal water channel; if it gets too hot or too humid, a fan switches on for ventilation (with hysteresis so it does not chatter). No soil moisture sensor needed.
+
+| | |
+|---|---|
+| **Hardware** | Kypruino, DHT22 (or DHT11) temp/humidity sensor, small water pump + driver, fan + driver, USB cable |
+| **Wiring** | DHT data → D2 · Pump driver → D8 · Fan driver → D9 · **never drive the pump/fan directly from I/O pins** |
+| **Libraries** | DHT sensor library |
+| **Config** | `DHT_TYPE`, `HUMIDITY_WATER_THRESHOLD`, `TEMP_FAN_ON/OFF`, `HUMIDITY_FAN_ON/OFF`, `CHECK_INTERVAL_MS`, `PUMP_TIME_MS` |
+| **Print** | Greenhouse enclosure with internal water channel |
+| **Guide** | *Blog write-up coming soon* |
 
 ---
 
