@@ -77,7 +77,7 @@ Each project folder follows the same pattern: `README.md`, `code/`, `stl/`, `ima
 ---
 
 ### `04-star-saver/`
-**StarSaver — Smart Street Light Model for Dark Skies** — A planetarium demonstration model for light-pollution awareness. An LDR module reads ambient light; below a threshold the model switches on a downward-facing warm white street lamp while the onboard NeoPixels light the house interior in a cooler white. Lamp wiring is routed underground into the house for a clean presentation.
+**StarSaver — Smart Street Light Model for Dark Skies** — A planetarium demonstration model for light-pollution awareness. An LDR module reads ambient light; below a threshold the model switches on a downward-facing warm white street lamp while the onboard NeoPixels light the house interior with a dim warm glow. Lamp wiring is routed underground into the house for a clean presentation.
 
 | | |
 |---|---|
@@ -85,7 +85,8 @@ Each project folder follows the same pattern: `README.md`, `code/`, `stl/`, `ima
 | **Wiring** | LDR VCC → 5V · GND → GND · SIG → A0 · LED anode → D10 via resistor · cathode → GND |
 | **Libraries** | Adafruit NeoPixel |
 | **Print** | House enclosure (roof slot for LDR), street lamp, base section with underground wire channel |
-| **Tuning** | Adjust `int darkThreshold = 500;` and the comparison direction to suit your LDR module |
+| **Config** | `darkThreshold = 500`, `LAMP_BRIGHTNESS`, `HOUSE_R/G/B` |
+| **Tuning** | Watch the LDR value in the Serial Monitor (9600 baud) and set `darkThreshold` between your lit and dark readings; flip the `<` comparison if your module reads higher in the dark |
 | **Guide** | [Read the build](https://robo.com.cy/blogs/blog/smart-street-light-model-dark-skies-kypruino) |
 
 ---
