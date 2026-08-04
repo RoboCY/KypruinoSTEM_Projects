@@ -15,7 +15,7 @@ kypruino-stem-projects/
 ├── 01-pumpkin-peek/
 │   ├── README.md
 │   ├── code/          Arduino sketch (.ino)
-│   ├── stl/           3D printable parts (.stl / .3mf)
+│   ├── stl/           3D printable parts (.stl)
 │   └── images/
 ├── 02-egg-cited/
 ├── 03-tilt-glow/
@@ -36,17 +36,15 @@ Each project folder follows the same pattern: `README.md`, `code/`, `stl/`, `ima
 ## Projects
 
 ### `01-pumpkin-peek/`
-**PumpkinPeek — Interactive 3D Printed Spooky Pumpkin** — A motion-activated Halloween prop. A PIR sensor detects passers-by, the onboard NeoPixels flicker orange/red like a candle (random brightness 75–255) and the buzzer plays the opening of the Halloween theme, then cools down and re-arms. Printed in transparent PLA/PETG so the shell glows.
+**PumpkinPeek — Interactive 3D Printed Spooky Pumpkin** — A motion-activated Halloween prop. A PIR sensor detects passers-by, the onboard NeoPixels flicker orange/red like a candle (random brightness 75–255) and the buzzer plays the opening of the Halloween theme, then cools down and re-arms. An original ROBO enclosure design: fluted shell with a lift-off stem lid, a PIR holder at the "nose" and internal board clips, printed in transparent PLA/PETG so the whole body glows.
 
 | | |
 |---|---|
 | **Hardware** | Kypruino, PIR motion sensor, 3× male–female DuPont wires, USB-C cable |
-| **Wiring** | PIR VCC → 5V · GND → GND · OUT → D7 |
+| **Wiring** | PIR VCC → 5V · GND → GND · OUT → D7 · NeoPixels → D8 · Buzzer → D9 (onboard) |
 | **Libraries** | Adafruit NeoPixel |
-| **Print** | Transparent filament; flat internal base for board mounting, rear hole for USB-C |
-| **Guide** | [Read the build](https://robo.com.cy/blogs/blog/create-your-own-kypruino-arduino-spooky-3d-printed-pumpkin) |
-
-*Model attribution: based on "Jackie Jack-o-Lantern" by BirdBott on [Thingiverse](https://www.thingiverse.com/thing:4613024), modified with a flat base and cable pass-through.*
+| **Print** | Transparent/translucent filament; body, lid and PIR holder, flat internal base with board clips, rear hole for USB-C |
+| **Guide** | [Read the build](https://robo.com.cy/blogs/blog/create-your-own-kypruino-arduino-interactive-3d-printed-spooky-pumpkin-re-written) |
 
 ---
 

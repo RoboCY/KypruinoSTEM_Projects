@@ -2,7 +2,7 @@
   ============================================================
   PumpkinPeek — Interactive 3D Printed Spooky Pumpkin
   Part of the Kypruino STEM Projects by ROBO (robo.com.cy)
-  Guide: https://robo.com.cy/blogs/blog/create-your-own-kypruino-arduino-spooky-3d-printed-pumpkin
+  Guide: https://robo.com.cy/blogs/blog/create-your-own-kypruino-arduino-interactive-3d-printed-spooky-pumpkin-re-written
   ============================================================
 
   What this project does:
