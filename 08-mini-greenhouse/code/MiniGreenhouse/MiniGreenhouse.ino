@@ -5,38 +5,39 @@
   Guide: https://robo.com.cy/blogs/blog/kypruino-mini-smart-greenhouse
   ============================================================
 
-  Humidity-based watering version.
+  Humidity-Based Watering Version - AHT10 Sensor
 
-  What this project does:
+  Features:
   - Reads temperature and humidity every few minutes.
   - If air humidity is too low, the pump runs briefly to fill the water channel.
   - If temperature or humidity is too high, the fan turns on for ventilation.
   - No soil moisture sensor is used.
 
   Sensor:
-  - DHT temperature/humidity sensor on D2
+  - AHT10 temperature/humidity sensor using I2C
 
   Outputs:
-  - Pump driver on D8
-  - Fan driver on D9
+  - Pump driver on D10
+  - Fan driver on D11
 
   IMPORTANT:
   Do not power the pump or fan directly from Kypruino I/O pins.
+  Use a MOSFET/transistor driver and an external power supply if needed.
 */
 
-// -------------------- Library --------------------
+// -------------------- Libraries --------------------
 
-#include <DHT.h>
+#include <Wire.h>
+#include <Adafruit_AHTX0.h>
 
 // -------------------- Pin Settings --------------------
 
-#define DHT_PIN 2
-#define DHT_TYPE DHT22   // Change to DHT11 if you are using a DHT11
+#define PUMP_PIN 10
+#define FAN_PIN 11
 
-#define PUMP_PIN 8
-#define FAN_PIN 9
+// -------------------- Sensor Object --------------------
 
-DHT dht(DHT_PIN, DHT_TYPE);
+Adafruit_AHTX0 aht;
 
 // -------------------- Timing Settings --------------------
 
@@ -65,7 +66,6 @@ const float HUMIDITY_FAN_OFF = 80.0;
 // -------------------- Variables --------------------
 
 unsigned long lastCheckTime = 0;
-
 bool fanOn = false;
 
 // -------------------- Setup --------------------
@@ -77,11 +77,20 @@ void setup() {
   digitalWrite(PUMP_PIN, LOW);
   digitalWrite(FAN_PIN, LOW);
 
-  dht.begin();
-
   Serial.begin(9600);
+
   Serial.println("Smart Mini Greenhouse Started");
   Serial.println("Humidity-based watering mode");
+  Serial.println("Sensor: AHT10");
+
+  if (!aht.begin()) {
+    Serial.println("Could not find AHT10 sensor. Check wiring.");
+    while (1) {
+      delay(10);
+    }
+  }
+
+  Serial.println("AHT10 sensor found.");
 
   // Force first check immediately
   lastCheckTime = millis() - CHECK_INTERVAL_MS;
@@ -93,15 +102,15 @@ void loop() {
   if (millis() - lastCheckTime >= CHECK_INTERVAL_MS) {
     lastCheckTime = millis();
 
-    float humidity = dht.readHumidity();
-    float temperature = dht.readTemperature();
+    sensors_event_t humidityEvent;
+    sensors_event_t temperatureEvent;
+
+    aht.getEvent(&humidityEvent, &temperatureEvent);
+
+    float humidity = humidityEvent.relative_humidity;
+    float temperature = temperatureEvent.temperature;
 
     Serial.println("--------------------");
-
-    if (isnan(humidity) || isnan(temperature)) {
-      Serial.println("Sensor reading failed. Skipping this check.");
-      return;
-    }
 
     Serial.print("Temperature: ");
     Serial.print(temperature);
@@ -111,7 +120,7 @@ void loop() {
     Serial.print(humidity);
     Serial.println(" %");
 
-    // -------------------- Fan control --------------------
+    // -------------------- Fan Control --------------------
 
     if (temperature > TEMP_FAN_ON || humidity > HUMIDITY_FAN_ON) {
       fanOn = true;
@@ -126,7 +135,7 @@ void loop() {
     Serial.print("Fan: ");
     Serial.println(fanOn ? "ON" : "OFF");
 
-    // -------------------- Watering control --------------------
+    // -------------------- Watering Control --------------------
 
     if (humidity < HUMIDITY_WATER_THRESHOLD) {
       Serial.println("Humidity is low. Pumping water into the channel...");

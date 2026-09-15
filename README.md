@@ -24,6 +24,7 @@ kypruino-stem-projects/
 ├── 06-sonic-sphere/
 ├── 07-plant-pal/
 ├── 08-mini-greenhouse/
+├── 10-arcade-machine/
 ├── LICENSE-CODE
 ├── LICENSE-HARDWARE
 └── README.md
@@ -135,16 +136,30 @@ Each project folder follows the same pattern: `README.md`, `code/`, `stl/`, `ima
 ---
 
 ### `08-mini-greenhouse/`
-**Smart Mini Greenhouse** — A desktop greenhouse that waters and ventilates itself. A DHT22 sensor checks temperature and air humidity every five minutes: if humidity drops too low, a small pump briefly fills the internal water channel; if it gets too hot or too humid, a fan switches on for ventilation (with hysteresis so it does not chatter). No soil moisture sensor needed.
+**Smart Mini Greenhouse** — A desktop greenhouse that waters and ventilates itself. An AHT10 sensor checks temperature and air humidity every five minutes: if it gets too hot or too humid, a fan switches on for ventilation (with hysteresis so it does not chatter); if humidity drops too low, a micro submersible pump in the front water tank runs a short burst to top up the water channel. Fan and pump are switched by N-channel MOSFETs. No soil moisture sensor needed.
 
 | | |
 |---|---|
-| **Hardware** | Kypruino, DHT22 (or DHT11) temp/humidity sensor, small water pump + driver, fan + driver, USB cable |
-| **Wiring** | DHT data → D2 · Pump driver → D8 · Fan driver → D9 · **never drive the pump/fan directly from I/O pins** |
-| **Libraries** | DHT sensor library |
-| **Config** | `DHT_TYPE`, `HUMIDITY_WATER_THRESHOLD`, `TEMP_FAN_ON/OFF`, `HUMIDITY_FAN_ON/OFF`, `CHECK_INTERVAL_MS`, `PUMP_TIME_MS` |
-| **Print** | Greenhouse enclosure with internal water channel |
+| **Hardware** | Kypruino, AHT10 temp/humidity sensor, 5 V DC brushless fan, micro submersible 5 V pump + tubing, 2× P16NF06L N-channel MOSFETs, 2× 220 Ω + 2× 10 kΩ resistors, breadboard, USB-C cable |
+| **Wiring** | AHT10 → I2C (VIN/GND/SDA/SCL) · Fan MOSFET gate → D8 · Pump MOSFET gate → D9, each through a 220 Ω resistor with a 10 kΩ pull-down to GND · **never drive the fan/pump directly from I/O pins** |
+| **Libraries** | Adafruit AHTX0, Adafruit BusIO, Adafruit Unified Sensor |
+| **Config** | `MAX_TEMPERATURE_C`, `MAX_HUMIDITY_PERCENT`, `FAN_OFF_TEMPERATURE_C`, `FAN_OFF_HUMIDITY_PERCENT`, `MIN_HUMIDITY_PERCENT`, `PUMP_TARGET_HUMIDITY_PERCENT`, `CHECK_INTERVAL_MS`, `PUMP_RUN_MS`, `PUMP_COOLDOWN_MS` |
+| **Print** | Greenhouse body with plant compartments, front water tank, fan opening, overflow channel and transparent cover |
 | **Guide** | [Read the build](https://robo.com.cy/blogs/blog/kypruino-mini-smart-greenhouse) |
+
+---
+
+### `10-arcade-machine/`
+**Kypruino Mini Arcade Machine** — A pocket arcade with twelve games on one ATmega328P. The Kypruino is held portrait so its four buttons form a D-pad, a 1.8" colour LCD is the main screen and a portrait 128×32 OLED beside it is a live second screen for score, lives, gauges and cheeky messages. Buzzer music and effects, NeoPixel lighting, per-game high scores in EEPROM, pause, attract mode. Simon, Snake, Tetris, 2048, Breakout, Space Shooter, Lane Racer, Frogger, Flappy, Whack-a-Mole, Beat Lanes (rhythm) and a Tamagotchi-style Kypruino Pet. All display, I2C, NeoPixel and sound drivers are written in the sketch, so no libraries are needed and everything fits in 32 KB.
+
+| | |
+|---|---|
+| **Hardware** | Kypruino, 1.8" ST7735 128×160 SPI TFT, 0.91" 128×32 SSD1306 I2C OLED, jumper wires, USB-C cable |
+| **Wiring** | LCD SCK → D13 · MOSI → D11 · CS → D10 · DC → D5 · RST → D3 · VCC/LED → 5V · GND → GND<br>OLED → I2C port (VCC/GND/SDA/SCL) · Buttons D7/D6/D4/D2 · NeoPixels D8 · Buzzer D9 (onboard) |
+| **Libraries** | None |
+| **Config** | `Config.h`: button mapping, `LCD_ROTATION`, `LCD_BGR`, `OLED_FLIP`, `PIXEL_BRIGHTNESS`, and a `GAME_...` switch per game |
+| **Print** | Handheld shell holding the Kypruino portrait with the LCD landscape and the OLED portrait beside it |
+| **Guide** | [Read the build](https://robo.com.cy/blogs/blog/kypruino-mini-arcade-machine) |
 
 ---
 
