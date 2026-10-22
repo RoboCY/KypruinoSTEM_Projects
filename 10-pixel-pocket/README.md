@@ -1,8 +1,15 @@
-# Kypruino Mini Arcade Machine
+# PixelPocket — Kypruino Mini Arcade Machine
 
-A pocket arcade with twelve games on a single ATmega328P. The Kypruino is held portrait with the USB-C connector facing down, so its four onboard buttons form a cross that works as a D-pad. A 1.8" colour LCD mounted landscape is the main screen, and a narrow 128×32 OLED mounted portrait beside it is a live "second screen" that shows score, lives, gauges, combo counters and cheeky messages while you play. The onboard buzzer plays music and effects and the three NeoPixels light up with the action.
+A pocket arcade with twelve games on a single ATmega328P. The Kypruino is held portrait with the USB-C connector facing down, so its four onboard buttons form a cross that works as a D-pad. A 1.8" colour LCD mounted landscape is the main screen, and a narrow 128×32 OLED mounted portrait below it is a live "second screen" that shows score, lives, gauges, combo counters and cheeky messages while you play. The onboard buzzer plays music and effects and the three NeoPixels light up with the action.
 
 No external libraries are needed. The LCD, OLED, I2C, NeoPixel and sound drivers are written inside the sketch so that everything fits in 32 KB of flash.
+
+<p>
+  <img src="images/pixel-pocket-1.png" width="360" alt="PixelPocket on the game menu, with the OLED second screen and the U/L/R/D buttons">
+  <img src="images/pixel-pocket-2.jpg" width="360" alt="Playing Snake on PixelPocket, held in two hands">
+</p>
+
+More photos in [images/](images/), including the [wiring diagram](images/pixel-pocket-wiring.png) and enclosure renders.
 
 ## Games
 
@@ -27,14 +34,15 @@ Menu: UP/DOWN choose a game, RIGHT starts it. In a game, hold LEFT + RIGHT toget
 
 | | |
 |---|---|
-| **Code** | [`code/KypruinoArcade/`](code/KypruinoArcade/) (open `KypruinoArcade.ino`, the other files load with it) |
-| **3D parts** | [`stl/`](stl/) |
+| **Code** | [`code/PixelPocket/`](code/PixelPocket/) (open `PixelPocket.ino`, the other files load with it) |
+| **3D parts** | [`stl/pixel-pocket-body.stl`](stl/pixel-pocket-body.stl) · [`stl/pixel-pocket-top.stl`](stl/pixel-pocket-top.stl) · [`stl/pixel-pocket-button.stl`](stl/pixel-pocket-button.stl) · [`stl/pixel-pocket-diffuser.stl`](stl/pixel-pocket-diffuser.stl) |
 | **Hardware** | Kypruino, 1.8" ST7735 128×160 SPI TFT LCD, 0.91" 128×32 SSD1306 I2C OLED, jumper wires, USB-C cable |
 | **LCD wiring** | VCC → 5V (or 3.3V, check your module) · GND → GND · SCK/CLK → D13 · SDA/MOSI → D11 · CS → D10 · A0/DC → D5 · RESET → D3 · LED → 5V (through the module's resistor, or 3.3V) |
 | **OLED wiring** | Kypruino I2C/OLED port (VCC / GND / SDA / SCL), address 0x3C |
 | **Onboard** | Buttons C = UP (D4) · A = DOWN (D7) · B = LEFT (D6) · D = RIGHT (D2) · NeoPixels → D8 · Buzzer → D9 |
 | **Libraries** | None |
-| **Config** | [`Config.h`](code/KypruinoArcade/Config.h): button-to-direction mapping, LCD rotation and colour order, OLED flip, brightness, and the list of games compiled into the build |
+| **Config** | [`Config.h`](code/PixelPocket/Config.h): button-to-direction mapping, LCD rotation and colour order, OLED flip, brightness, and the list of games compiled into the build |
+| **Print** | Main body that holds the Kypruino portrait, with side slots so the jumper wires loop out to the headers; top plate with the LCD and OLED windows and the U/L/R/D labels; four button caps (print 4) that press the onboard buttons; light bar diffuser over the NeoPixels. Print the caps in white and the diffuser in white or translucent filament |
 | **Guide** | [Read the full build](https://robo.com.cy/blogs/blog/kypruino-mini-arcade-machine) |
 
 ### Getting the screens right
@@ -49,7 +57,7 @@ Every game costs between 1 and 3 KB of flash. The full set of twelve compiles to
 
 ### Writing your own game
 
-Copy `GameSimon.cpp`, give it a new `GAME_...` switch in `Config.h`, an id in `Engine.h`, add the record to `Games.h` and the list in `KypruinoArcade.ino`. A game is three functions: `start()` draws the first frame, `update()` runs 40 times a second, and `hud()` redraws the OLED. Keep all state in the shared `gameRam` arena (300 bytes), keep tables and strings in PROGMEM, and draw only what changed on the LCD because there is no framebuffer.
+Copy `GameSimon.cpp`, give it a new `GAME_...` switch in `Config.h`, an id in `Engine.h`, add the record to `Games.h` and the list in `PixelPocket.ino`. A game is three functions: `start()` draws the first frame, `update()` runs 40 times a second, and `hud()` redraws the OLED. Keep all state in the shared `gameRam` arena (300 bytes), keep tables and strings in PROGMEM, and draw only what changed on the LCD because there is no framebuffer.
 
 ## Notes
 

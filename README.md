@@ -24,7 +24,8 @@ kypruino-stem-projects/
 ├── 06-sonic-sphere/
 ├── 07-plant-pal/
 ├── 08-mini-greenhouse/
-├── 10-arcade-machine/
+├── 09-balance-bot/
+├── 10-pixel-pocket/
 ├── LICENSE-CODE
 ├── LICENSE-HARDWARE
 └── README.md
@@ -149,8 +150,23 @@ Each project folder follows the same pattern: `README.md`, `code/`, `stl/`, `ima
 
 ---
 
-### `10-arcade-machine/`
-**Kypruino Mini Arcade Machine** — A pocket arcade with twelve games on one ATmega328P. The Kypruino is held portrait so its four buttons form a D-pad, a 1.8" colour LCD is the main screen and a portrait 128×32 OLED beside it is a live second screen for score, lives, gauges and cheeky messages. Buzzer music and effects, NeoPixel lighting, per-game high scores in EEPROM, pause, attract mode. Simon, Snake, Tetris, 2048, Breakout, Space Shooter, Lane Racer, Frogger, Flappy, Whack-a-Mole, Beat Lanes (rhythm) and a Tamagotchi-style Kypruino Pet. All display, I2C, NeoPixel and sound drivers are written in the sketch, so no libraries are needed and everything fits in 32 KB.
+### `09-balance-bot/`
+**BalanceBot — Kypruino Self-Balancing Robot** — A two-wheeled robot that stands up on its own. 200 times a second an MPU6050 measures the lean and the Kypruino drives a single TT gear motor through an L298N to roll the wheels back underneath it. It holds its spot by leaning against its own drift, trims its balance angle while it runs, shows the lean on the NeoPixels and keeps a black box of the last three runs in EEPROM. Gains can be tuned live over the Serial Monitor.
+
+| | |
+|---|---|
+| **Hardware** | Kypruino, MPU6050 accelerometer/gyro, L298N motor driver, TT gear motor + 2 wheels, 2× 9 V batteries, USB-C cable |
+| **Wiring** | MPU6050 SDA → A4 · SCL → A5 · VCC → 5V · GND → GND<br>L298N ENA → D5 (jumper removed) · IN1 → D10 · IN2 → D11 · 5V/GND → Kypruino 5V/GND · batteries in parallel → L298N 12V/GND |
+| **Onboard** | NeoPixels → D8 · Buzzer → D9 · Button B (D6) = start / stop |
+| **Libraries** | MPU6050_light, Adafruit NeoPixel |
+| **Config** | `Kp`, `Kd`, `KV`, `KX`, `RETURN_LEAN`, `DEADBAND`, `FALL_DEG`; most can be tried live over serial (115200 baud) first |
+| **Print** | One-piece frame: Kypruino cradle on top, mast with MPU6050 and L298N mounts, TT motor holder at the bottom |
+| **Guide** | [Read the build](https://robo.com.cy/blogs/blog/kypruino-self-balancing-robot) |
+
+---
+
+### `10-pixel-pocket/`
+**PixelPocket — Kypruino Mini Arcade Machine** — A pocket arcade with twelve games on one ATmega328P. The Kypruino is held portrait so its four buttons form a D-pad, a 1.8" colour LCD is the main screen and a portrait 128×32 OLED below it is a live second screen for score, lives, gauges and cheeky messages. Buzzer music and effects, NeoPixel lighting, per-game high scores in EEPROM, pause, attract mode. Simon, Snake, Tetris, 2048, Breakout, Space Shooter, Lane Racer, Frogger, Flappy, Whack-a-Mole, Beat Lanes (rhythm) and a Tamagotchi-style Kypruino Pet. All display, I2C, NeoPixel and sound drivers are written in the sketch, so no libraries are needed and everything fits in 32 KB.
 
 | | |
 |---|---|
@@ -158,7 +174,7 @@ Each project folder follows the same pattern: `README.md`, `code/`, `stl/`, `ima
 | **Wiring** | LCD SCK → D13 · MOSI → D11 · CS → D10 · DC → D5 · RST → D3 · VCC/LED → 5V · GND → GND<br>OLED → I2C port (VCC/GND/SDA/SCL) · Buttons D7/D6/D4/D2 · NeoPixels D8 · Buzzer D9 (onboard) |
 | **Libraries** | None |
 | **Config** | `Config.h`: button mapping, `LCD_ROTATION`, `LCD_BGR`, `OLED_FLIP`, `PIXEL_BRIGHTNESS`, and a `GAME_...` switch per game |
-| **Print** | Handheld shell holding the Kypruino portrait with the LCD landscape and the OLED portrait beside it |
+| **Print** | Main body holding the Kypruino portrait, top plate with LCD and OLED windows, 4 button caps, NeoPixel light bar diffuser |
 | **Guide** | [Read the build](https://robo.com.cy/blogs/blog/kypruino-mini-arcade-machine) |
 
 ---

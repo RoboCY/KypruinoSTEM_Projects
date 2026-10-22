@@ -1,6 +1,6 @@
 /*
   ============================================================
-  KypruinoArcade — Kypruino Mini Arcade Machine
+  PixelPocket — Kypruino Mini Arcade Machine
   Part of the Kypruino STEM Projects by ROBO (robo.com.cy)
   Guide: https://robo.com.cy/blogs/blog/kypruino-mini-arcade-machine
   ============================================================
